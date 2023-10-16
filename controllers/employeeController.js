@@ -12,7 +12,7 @@ exports.createEmployee = catchAsync(async (req, res, next) => {
 });
 
 exports.getAllEmployees = catchAsync(async (req, res, next) => {
-  const features = new APIFeatures(Employee.find, req.query)
+  const features = new APIFeatures(Employee.find(), req.query)
     .filter()
     .sort()
     .limitFields()
